@@ -1,5 +1,6 @@
 package web.config;
 
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import web.interceptor.JwtTokenAdminInterceptor;
 import web.interceptor.JwtTokenUserInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,10 @@ public class WebMVCConfiguration implements WebMvcConfigurer {
         registry.addInterceptor(jwtTokenUserInterceptor)
                 .addPathPatterns("/user/**")
                 .excludePathPatterns("/user/users/register","/user/users/login","/user/users/logout");
+    }
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/云/**")
+                .addResourceLocations("file:云/");
     }
 }
