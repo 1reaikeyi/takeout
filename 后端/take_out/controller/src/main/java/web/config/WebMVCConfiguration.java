@@ -24,6 +24,7 @@ public class WebMVCConfiguration implements WebMvcConfigurer {
                 .addPathPatterns("/user/**")
                 .excludePathPatterns("/user/users/register","/user/users/login","/user/users/logout");
     }
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/云/**")
