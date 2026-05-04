@@ -1,0 +1,32 @@
+take_out:
+#数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    host: localhost
+    port: 3306
+    database: use_take_out
+    username: root
+    password: ${MYSQL_PASSWORD}
+#redis配置文件
+  redis:
+    host: 192.168.80.128
+    port: 6379
+    password: ${MYSQL_PASSWORD}
+    database: 0
+  controller: info
+#文件上传
+  # 阿里云OSS 地域节点（服务访问地址）
+  endpoint: www.xxx.com
+  # 阿里云身份凭证ID（相当于“账号”）
+  access-key-id: localhost
+  # 阿里云身份凭证密钥（相当于“密码”）
+  access-key-secret: xxx
+  # 阿里云OSS 存储空间名称（相当于“网盘文件夹”）
+  bucket-name: src/main/resources/static/云
+# 支付宝支付
+  alipay:
+    app-id: 9021000162662012
+    app-private-key: ${PATH_alibaba_private_pay}
+    alipay-public-key: ${PATH_alibaba_public_pay}
+    notify-url: https://localhost:8080/pay/notify
+    return-url: http://localhost:8080/pay/return
