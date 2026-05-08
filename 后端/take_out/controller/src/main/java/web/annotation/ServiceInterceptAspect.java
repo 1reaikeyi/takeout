@@ -31,14 +31,14 @@ public class ServiceInterceptAspect {
             // 3. 执行目标方法（核心业务逻辑）
             result = joinPoint.proceed();
             long costTime = System.currentTimeMillis() - startTime;
-            log.info(">>>{}执行成功", methodDesc);
-            log.info(">>>目标类：{} | 目标方法：{} ", className, methodName);
+            log.info("=>{}执行成功", methodDesc);
+            log.info("=>目标类：{} | 目标方法：{} ", className, methodName);
             log.info("耗时：{}ms | Result：{}", costTime, result);
         } catch (Exception e) {
             // 5. 方法执行异常：打印异常信息
             long costTime = System.currentTimeMillis() - startTime;
-            log.error(">>>执行失败{}", methodDesc);
-            log.error(">>>目标类：{} | 目标方法：{} ", className, methodName);
+            log.error("=>执行失败{}", methodDesc);
+            log.error("=>目标类：{} | 目标方法：{} ", className, methodName);
             log.error("耗时：{}ms | 异常信息：{}", costTime, e.getMessage());
             throw e;
         }
