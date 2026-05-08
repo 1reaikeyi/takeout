@@ -1,6 +1,7 @@
 package web.exceptionHandle;
 
 import common.constant.ErrorConstant;
+import common.exception.BaseException;
 import common.result.Result;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -8,7 +9,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-    @ExceptionHandler(Exception.class)
+    @ExceptionHandler(BaseException.class)
     public Result exception(Exception e) {
         return Result.error(e.getMessage()+">>>>去联系管理员");
     }

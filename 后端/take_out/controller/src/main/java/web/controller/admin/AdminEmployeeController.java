@@ -31,11 +31,11 @@ import java.util.Map;
 @RequestMapping("/admin/employees")
 @Transactional(rollbackFor = Exception.class)
 public class AdminEmployeeController {
+
     @Autowired
     private EmployeeService employeeService;
     @Autowired
     private JwtProperties jwtProperties;
-
 
     @PostMapping("/register")
     public Result register(@RequestBody EmployeeDTO employeeDTO) {
@@ -46,7 +46,8 @@ public class AdminEmployeeController {
         // 密码加密
         employeeDTO.setPassword(DigestUtils.md5DigestAsHex(employeeDTO.getPassword().getBytes()));
         Employee employee = Employee.builder()
-                .userName(employeeDTO.getUserName()).name(employeeDTO.getName()).phone(employeeDTO.getPhone()).sex(employeeDTO.getSex()).idNumber(employeeDTO.getIdNumber())
+                .userName(employeeDTO.getUserName()).name(employeeDTO.getName())
+                .phone(employeeDTO.getPhone()).sex(employeeDTO.getSex()).idNumber(employeeDTO.getIdNumber())
                 .password(employeeDTO.getPassword()).status(StatusConstant.ENABLE)
                 .build();
         employeeService.save(employee);

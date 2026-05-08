@@ -1,4 +1,4 @@
-package web.controller.common;
+package web.controller.file;
 
 import common.result.Result;
 import common.utils.AliOssUtil;
@@ -21,9 +21,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/common/files")
+@RequestMapping("/local")
 @Slf4j
-public class FileController {
+public class LocalFileController {
     @Autowired
     private AliOssUtil aliOssUtil;
     //本地存储
