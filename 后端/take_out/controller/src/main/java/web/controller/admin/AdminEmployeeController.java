@@ -41,7 +41,7 @@ public class AdminEmployeeController {
     public Result register(@RequestBody EmployeeDTO employeeDTO) {
         Employee check_employee = employeeService.loadByEmployeeName(employeeDTO.getUserName());
         if (check_employee != null) {
-            throw new RuntimeException(ErrorConstant.USERNAME_EXIST);
+            return Result.error(ErrorConstant.USERNAME_EXIST);
         }
         // 密码加密
         employeeDTO.setPassword(DigestUtils.md5DigestAsHex(employeeDTO.getPassword().getBytes()));
@@ -59,7 +59,7 @@ public class AdminEmployeeController {
     public Result login(@RequestBody EmployeeLoginDTO employeeLoginDTO) {
         Employee employee = employeeService.login(employeeLoginDTO);
         if (employee == null) {
-            throw new RuntimeException(ErrorConstant.PASSWORD_ERROR);
+            return Result.error(ErrorConstant.PASSWORD_ERROR);
         }
         //登录成功后，生成jwt令牌
         Map<String, Object> claims = new HashMap<>();

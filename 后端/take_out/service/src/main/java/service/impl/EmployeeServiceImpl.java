@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import common.constant.ErrorConstant;
 import common.constant.StatusConstant;
+import common.exception.BaseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
@@ -39,17 +40,17 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
         //2、处理各种异常情况
         // 检查用户是否存在
         if (employee == null){
-            throw new RuntimeException(ErrorConstant.ACCOUNT_NOT_FOUND);
+            throw new BaseException(ErrorConstant.ACCOUNT_NOT_EXIST);
         }
         //密码比对
         if (!password.equals(employee.getPassword())) {
             //密码错误
-            throw new RuntimeException(ErrorConstant.PASSWORD_ERROR);
+            throw new BaseException(ErrorConstant.PASSWORD_ERROR);
         }
         //账号状态检查
         if (employee.getStatus() == StatusConstant.DISABLE) {
             //账号被锁定
-            throw new RuntimeException(ErrorConstant.ACCOUNT_LOCKED);
+            throw new BaseException(ErrorConstant.ACCOUNT_LOCKED);
         }
         //3、返回实体对象
         return employee;

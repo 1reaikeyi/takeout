@@ -8,7 +8,7 @@ public class ErrorConstant {
     public static final String USERNAME_EXIST = "用户名已存在";
     public static final String PASSWORD_ERROR = "密码错误";
     public static final String SECURITY_CODE_ERROR = "验证码错误";
-    public static final String ACCOUNT_NOT_FOUND = "账号不存在";
+    public static final String ACCOUNT_NOT_EXIST = "账号不存在";
     public static final String ACCOUNT_LOCKED = "账号被锁定";
     public static final String ERROR = "未知错误";
     public static final String NULL_ERROR = "出现不存在异常";
