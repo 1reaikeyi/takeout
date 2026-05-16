@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
     <groupId>org.example</groupId>
-    <artifactId>后端</artifactId>
+    <artifactId>take-out</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <url/>
@@ -27,8 +27,8 @@
     </scm>
     <modules>
         <module>common</module>
-        <module>pojo</module>
-        <module>repository</module>
+        <module>entity</module>
+        <module>mapper</module>
         <module>service</module>
         <module>controller</module>
     </modules>
@@ -66,17 +66,6 @@
                 <scope>runtime</scope>
             </dependency>
 
-            <!-- Excel 处理，第一种处理方式，使用 poi 处理 excel 文件 -->
-<!--            <dependency>-->
-<!--                <groupId>org.apache.poi</groupId>-->
-<!--                <artifactId>poi</artifactId>-->
-<!--                <version>5.2.2</version>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>org.apache.poi</groupId>-->
-<!--                <artifactId>poi-ooxml</artifactId>-->
-<!--                <version>5.2.2</version>-->
-<!--            </dependency>-->
             <!-- EasyExcel 处理alibaba excel第二种处理方式 -->
             <dependency>
                 <groupId>com.alibaba</groupId>

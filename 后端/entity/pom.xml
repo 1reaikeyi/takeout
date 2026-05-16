@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>后端</artifactId>
+        <artifactId>take-out</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>pojo</artifactId>
+    <artifactId>entity</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

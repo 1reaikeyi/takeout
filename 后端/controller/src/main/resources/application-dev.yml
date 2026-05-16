@@ -13,7 +13,7 @@ take_out:
     port: 6379
     password: ${MYSQL_PASSWORD}
     database: 0
-  controller: info
+  logging: info
 #文件上传
   # 阿里云OSS 地域节点（服务访问地址）
   endpoint: https://oss-cn-beijing.aliyuncs.com
