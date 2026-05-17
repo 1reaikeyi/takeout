@@ -11,7 +11,7 @@
         <module name="mapper" />
         <module name="common" />
         <module name="service" />
-        <module name="entity" />
+        <module name="domain" />
       </profile>
     </annotationProcessing>
   </component>
@@ -19,7 +19,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="common" options="-parameters" />
       <module name="controller" options="-parameters" />
-      <module name="entity" options="-parameters" />
+      <module name="domain" options="-parameters" />
       <module name="mapper" options="-parameters" />
       <module name="service" options="-parameters" />
       <module name="后端" options="" />

@@ -1,4 +1,4 @@
-package web.mateHandler;
+package web.metaHandler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import common.constant.AutoFillConstant;

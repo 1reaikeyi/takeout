@@ -24,13 +24,11 @@ import java.util.UUID;
 @RequestMapping("/local")
 @Slf4j
 public class LocalFileController {
-    @Autowired
-    private AliOssUtil aliOssUtil;
     //本地存储
     @PostMapping
     public Result upload(MultipartFile file) {
         String originalFilename = file.getOriginalFilename();
-        File file_local = new File(aliOssUtil.getBucketName());
+        File file_local = new File("云");
         String path = file_local.getAbsolutePath();
         File checkFile = new File(path);
         if (!checkFile.exists()) {
@@ -51,7 +49,7 @@ public class LocalFileController {
      */
     @GetMapping
     public void download(String fileName, HttpServletResponse response) {
-        File file_local = new File(aliOssUtil.getBucketName());
+        File file_local = new File("云");
         String path = file_local.getAbsolutePath() + "/" + fileName;
         try {
             File checkFile = new File(path);
